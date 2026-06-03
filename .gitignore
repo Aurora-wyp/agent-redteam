@@ -1,0 +1,25 @@
+# 敏感文件
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# 测试
+.pytest_cache/
+
+# 运行时
+logs/
+.playwright-mcp/
+
+# RAG 索引 (可由 indexer.py 重建)
+rag/index/
+
+# IDE
+.vscode/
+.idea/

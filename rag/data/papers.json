@@ -1,0 +1,106 @@
+[
+    {
+        "id": "PAPER-001",
+        "title": "Prompt Injection Attacks on Large Language Models",
+        "authors": "Perez, F. & Ribeiro, I. (2022)",
+        "venue": "arXiv",
+        "summary": "First systematic study of prompt injection. Categorizes attacks into direct (instruction override) and indirect (data channel injection). Demonstrates that all tested LLMs are vulnerable to simple injection attacks. Proposes instruction hierarchy as a defense.",
+        "key_findings": [
+            "Direct prompt injection succeeds against all tested models with trivial prompts",
+            "Indirect injection via web pages and emails is highly effective",
+            "Instruction hierarchy (system > user > data) is the most promising defense"
+        ],
+        "relevant_to": ["gandalf_l1", "gandalf_l2", "indirect_injection"]
+    },
+    {
+        "id": "PAPER-002",
+        "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+        "authors": "Greshake, K. et al. (2023)",
+        "venue": "arXiv",
+        "summary": "Demonstrates indirect prompt injection attacks on LLM-integrated applications (Bing Chat, code assistants). Shows that hidden instructions in web pages, PDFs, and videos can hijack LLM behavior.",
+        "key_findings": [
+            "LLM-integrated apps that read external content are vulnerable to injection via that content",
+            "Attackers can exfiltrate conversation data via markdown image injection",
+            "Multi-stage attacks can persist across sessions"
+        ],
+        "relevant_to": ["agent_security", "indirect_injection", "tool_call_hijack"]
+    },
+    {
+        "id": "PAPER-003",
+        "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+        "authors": "Zou, A. et al. (2023)",
+        "venue": "arXiv",
+        "summary": "Develops an automated method (GCG) to generate adversarial suffixes that jailbreak aligned LLMs. Demonstrates transferability across models including Vicuna, LLaMA, and GPT-3.5/4.",
+        "key_findings": [
+            "Greedy Coordinate Gradient (GCG) can automatically discover jailbreak suffixes",
+            "Adversarial suffixes transfer across different model architectures",
+            "Adding adversarial suffixes to otherwise refused prompts achieves high success rates"
+        ],
+        "relevant_to": ["gandalf_l7", "gandalf_l8", "adversarial_attacks"]
+    },
+    {
+        "id": "PAPER-004",
+        "title": "Jailbroken: How Does LLM Safety Training Fail?",
+        "authors": "Wei, A. et al. (2023)",
+        "venue": "arXiv",
+        "summary": "Systematic analysis of jailbreak failure modes. Identifies two main categories: competing objectives (where the model's helpfulness conflicts with safety) and mismatched generalization (where safety training doesn't generalize to new input formats).",
+        "key_findings": [
+            "Jailbreaks exploit competition between helpfulness and safety objectives",
+            "Safety training fails to generalize to encoded inputs (Base64, leetspeak)",
+            "Multi-shot prompting can override safety training"
+        ],
+        "relevant_to": ["gandalf_l4", "gandalf_l5", "gandalf_l6", "encoding_attacks"]
+    },
+    {
+        "id": "PAPER-005",
+        "title": "Ignore Previous Prompt: Attack Techniques for Language Models",
+        "authors": "Schulhoff, S. et al. (2023)",
+        "venue": "NeurIPS Workshop",
+        "summary": "Comprehensive taxonomy of prompt injection attacks. Covers 29 distinct attack techniques across 8 categories. Includes the Gandalf challenge as an evaluation benchmark.",
+        "key_findings": [
+            "Taxonomy of 29 prompt injection techniques across 8 categories",
+            "Gandalf serves as a practical benchmark for evaluating injection defenses",
+            "Most production systems remain vulnerable to basic injection techniques"
+        ],
+        "relevant_to": ["gandalf_all", "taxonomy", "evaluation"]
+    },
+    {
+        "id": "PAPER-006",
+        "title": "Red-Teaming Language Models and Language Model-Integrated Systems",
+        "authors": "Ganguli, D. et al. (2022)",
+        "venue": "Anthropic Technical Report",
+        "summary": "Large-scale red teaming methodology for LLMs. Describes how to systematically test for harmful outputs, prompt injection, and jailbreak vulnerabilities.",
+        "key_findings": [
+            "Structured red teaming scales beyond ad-hoc testing",
+            "Multi-turn conversations reveal more vulnerabilities than single-turn",
+            "Red teaming should cover both direct and indirect attack surfaces"
+        ],
+        "relevant_to": ["red_teaming", "methodology", "evaluation"]
+    },
+    {
+        "id": "PAPER-007",
+        "title": "Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation",
+        "authors": "Shah, R. et al. (2023)",
+        "venue": "arXiv",
+        "summary": "Introduces persona modulation as a social-engineering attack vector. Shows that assigning specific personas to LLMs dramatically increases jailbreak success rates.",
+        "key_findings": [
+            "Persona-based jailbreaks are highly transferable across models",
+            "Authority figures and technical roles are most effective for jailbreaking",
+            "Automated persona search can discover new effective personas"
+        ],
+        "relevant_to": ["gandalf_l3", "gandalf_l4", "role_play_attacks"]
+    },
+    {
+        "id": "PAPER-008",
+        "title": "Exploiting Programmatic Behavior of LLMs: Dual-Use Technologies for Security Attacks",
+        "authors": "Kang, D. et al. (2023)",
+        "venue": "IEEE S&P",
+        "summary": "Shows how LLM tool-use and API integration patterns can be exploited. Demonstrates attacks where LLMs are tricked into executing malicious code or leaking data through their tool-calling capabilities.",
+        "key_findings": [
+            "LLM tool-calling patterns introduce new attack surfaces",
+            "Agent frameworks (LangChain, AutoGPT) amplify the impact of prompt injection",
+            "Defense requires input sanitization at every tool boundary"
+        ],
+        "relevant_to": ["agent_security", "tool_call_hijack", "mcp_security"]
+    }
+]

@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "agent-redteam": {
+      "command": "python",
+      "args": ["server/main.py"],
+      "cwd": "D:\\agent-redteam"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated",
+        "--browser",
+        "chromium"
+      ],
+      "env": {
+        "MSYS_NO_PATHCONV": "1"
+      }
+    }
+  }
+}

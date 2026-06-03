@@ -1,0 +1,22 @@
+[project]
+name = "agent-redteam"
+version = "0.1.0"
+description = "AI-assisted Agent Security Testing MCP Server"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "sentence-transformers>=2.2.0",
+    "faiss-cpu>=1.7.0",
+    "openai>=1.0.0",
+    "httpx>=0.24.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "numpy>=1.24.0",
+]
+
+[project.scripts]
+agent-redteam = "server.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
